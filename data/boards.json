@@ -15,6 +15,14 @@
       "image": "assets/images/4-2.jpg",
       "thumb": "assets/images/thumbs/4-2.jpg",
       "audio": "",
+      "order": 3
+    },
+    {
+      "id": "4-12",
+      "name": "展板 4-12",
+      "image": "assets/images/4-12.jpg",
+      "thumb": "assets/images/thumbs/4-12.jpg",
+      "audio": "",
       "order": 2
     },
     {
@@ -24,14 +32,6 @@
       "thumb": "assets/images/thumbs/4-3.jpg",
       "audio": "",
       "order": 4
-    },
-    {
-      "id": "4-12",
-      "name": "展板 4-12",
-      "image": "assets/images/4-12.jpg",
-      "thumb": "assets/images/thumbs/4-12.jpg",
-      "audio": "",
-      "order": 3
     },
     {
       "id": "4-4",
