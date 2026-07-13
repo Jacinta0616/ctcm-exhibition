@@ -26,12 +26,20 @@
       "order": 3
     },
     {
+      "id": "4-12",
+      "name": "展板 4-12",
+      "image": "assets/images/4-12.jpg",
+      "thumb": "assets/images/thumbs/4-12.jpg",
+      "audio": "",
+      "order": 4
+    },
+    {
       "id": "4-4",
       "name": "展板 4-4",
       "image": "assets/images/4-4.jpg",
       "thumb": "assets/images/thumbs/4-4.jpg",
       "audio": "",
-      "order": 4
+      "order": 5
     },
     {
       "id": "4-5",
@@ -39,15 +47,7 @@
       "image": "assets/images/4-5.jpg",
       "thumb": "assets/images/thumbs/4-5.jpg",
       "audio": "",
-      "order": 6
-    },
-    {
-      "id": "4-12",
-      "name": "展板 4-12",
-      "image": "assets/images/4-12.jpg",
-      "thumb": "assets/images/thumbs/4-12.jpg",
-      "audio": "",
-      "order": 5
+      "order": 7
     },
     {
       "id": "4-6",
@@ -55,7 +55,7 @@
       "image": "assets/images/4-6.jpg",
       "thumb": "assets/images/thumbs/4-6.jpg",
       "audio": "",
-      "order": 7
+      "order": 6
     },
     {
       "id": "4-13",
