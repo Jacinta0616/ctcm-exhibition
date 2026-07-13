@@ -6,8 +6,7 @@
   var boardGrid = document.getElementById("board-grid");
   var backBtn = document.getElementById("back-btn");
   var detailTitle = document.getElementById("detail-title");
-  var detailImage = document.getElementById("detail-image");
-  var audioBar = document.getElementById("audio-bar");
+  var detailBody = document.getElementById("detail-body");
   var siteTitle = document.getElementById("site-title");
 
   var boardsById = {};
@@ -62,20 +61,30 @@
     });
   }
 
+  // 把 YouTube / Google Drive 分享連結轉成可嵌入的 embed 網址
+  function toEmbedUrl(url) {
+    if (!url) return null;
+    var yt = url.match(/(?:youtu\.be\/|youtube\.com\/watch\?v=|youtube\.com\/embed\/)([\w-]+)/);
+    if (yt) return "https://www.youtube.com/embed/" + yt[1];
+    var drive = url.match(/drive\.google\.com\/file\/d\/([\w-]+)/);
+    if (drive) return "https://drive.google.com/file/d/" + drive[1] + "/preview";
+    return url;
+  }
+
+  function isDirectVideoFile(url) {
+    return /\.(mp4|webm|ogg)$/i.test(url);
+  }
+
   function showDetail(board) {
     detailTitle.textContent = board.name;
-    detailImage.src = board.image;
-    detailImage.alt = board.name;
+    var type = board.type || "image";
 
-    if (board.audio) {
-      audioBar.innerHTML =
-        '<audio controls preload="none" src="' + board.audio + '"></audio>';
-      var audioEl = audioBar.querySelector("audio");
-      audioEl.play().catch(function () {
-        /* 需要使用者手動按播放，屬正常瀏覽器行為 */
-      });
+    if (type === "video") {
+      renderVideoDetail(board);
+    } else if (type === "game") {
+      renderGameDetail(board);
     } else {
-      audioBar.innerHTML = '<span class="no-audio">這個展板尚未上傳語音介紹</span>';
+      renderImageDetail(board);
     }
 
     homeView.style.display = "none";
@@ -83,11 +92,56 @@
     window.scrollTo(0, 0);
   }
 
+  function renderImageDetail(board) {
+    detailBody.innerHTML =
+      '<div class="detail-image-wrap"><img id="detail-image" src="' + board.image + '" alt="' + escapeHtml(board.name) + '"></div>' +
+      '<div class="audio-bar" id="audio-bar"></div>';
+
+    var audioBar = document.getElementById("audio-bar");
+    if (board.audio) {
+      audioBar.innerHTML = '<audio controls preload="none" src="' + board.audio + '"></audio>';
+      var audioEl = audioBar.querySelector("audio");
+      audioEl.play().catch(function () {
+        /* 需要使用者手動按播放，屬正常瀏覽器行為 */
+      });
+    } else {
+      audioBar.innerHTML = '<span class="no-audio">這個展板尚未上傳語音介紹</span>';
+    }
+  }
+
+  function renderVideoDetail(board) {
+    if (!board.video) {
+      detailBody.innerHTML = '<div class="empty-msg">這個展板尚未設定影片</div>';
+      return;
+    }
+    if (isDirectVideoFile(board.video)) {
+      detailBody.innerHTML =
+        '<div class="video-wrap"><video controls playsinline src="' + board.video + '"></video></div>';
+    } else {
+      var embed = toEmbedUrl(board.video);
+      detailBody.innerHTML =
+        '<div class="video-wrap"><iframe src="' + embed + '" allow="autoplay; fullscreen" allowfullscreen></iframe></div>';
+    }
+  }
+
+  function renderGameDetail(board) {
+    if (!board.url) {
+      detailBody.innerHTML = '<div class="empty-msg">這個展板尚未設定遊戲連結</div>';
+      return;
+    }
+    detailBody.innerHTML =
+      '<div class="game-wrap">' +
+        '<iframe src="' + board.url + '" allow="autoplay; fullscreen" allowfullscreen></iframe>' +
+      "</div>" +
+      '<div class="game-actions"><a class="btn-link" href="' + board.url + '" target="_blank" rel="noopener">在新視窗開啟遊戲 ↗</a></div>';
+  }
+
   function showHome() {
     homeView.style.display = "";
     detailView.classList.remove("active");
-    var audioEl = audioBar.querySelector("audio");
+    var audioEl = detailBody.querySelector("audio");
     if (audioEl) audioEl.pause();
+    detailBody.innerHTML = "";
     window.scrollTo(0, 0);
   }
 

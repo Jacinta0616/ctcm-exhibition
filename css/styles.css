@@ -182,6 +182,63 @@ body {
   font-size: 0.9rem;
 }
 
+/* ---------- 影片 / 遊戲展板 ---------- */
+
+.video-wrap {
+  max-width: 900px;
+  margin: 16px auto;
+  padding: 0 12px;
+}
+
+.video-wrap video {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
+  display: block;
+  background: #000;
+}
+
+.video-wrap iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
+  display: block;
+}
+
+.game-wrap {
+  margin: 16px 12px 8px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+.game-wrap iframe {
+  width: 100%;
+  height: calc(100vh - 180px);
+  min-height: 480px;
+  border: none;
+  display: block;
+}
+
+.game-actions {
+  text-align: center;
+  padding: 4px 12px 8px;
+}
+
+.btn-link {
+  display: inline-block;
+  color: var(--green-deep);
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding: 8px 14px;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+}
+
 /* ---------- 後台 ---------- */
 
 .admin-wrap {

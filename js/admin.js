@@ -94,6 +94,25 @@
     });
     boardList.innerHTML = "";
     boards.forEach(function (board, idx) {
+      var type = board.type || "image";
+      var typeFieldsHtml;
+      if (type === "video") {
+        typeFieldsHtml =
+          "<label>影片位置（YouTube 網址／Google Drive 分享連結／檔案路徑，尚未決定可留空）</label>" +
+          '<input type="text" class="extra-input" data-field="video" value="' + escapeHtml(board.video || "") + '" placeholder="https://youtu.be/xxxx 或 assets/video/' + board.id + '.mp4">';
+      } else if (type === "game") {
+        typeFieldsHtml =
+          "<label>互動遊戲網址</label>" +
+          '<input type="text" class="extra-input" data-field="url" value="' + escapeHtml(board.url || "") + '" placeholder="https://...">';
+      } else {
+        typeFieldsHtml =
+          "<label>語音介紹</label>" +
+          '<div class="audio-row">' +
+            '<span class="audio-name">' + (board.audio ? escapeHtml(board.audio.split("/").pop()) : "尚未上傳") + '</span>' +
+          "</div>" +
+          '<div class="audio-row"><input type="file" accept="audio/*" class="audio-input"></div>';
+      }
+
       var row = document.createElement("div");
       row.className = "admin-board";
       row.innerHTML =
@@ -103,13 +122,9 @@
         "</div>" +
         '<div class="thumb-wrap"><img src="' + (board.thumb || board.image) + '" alt=""></div>' +
         '<div class="fields">' +
-          "<label>展板顯示名稱</label>" +
+          "<label>展板顯示名稱" + (type !== "image" ? "（類型：" + (type === "video" ? "影片" : "互動遊戲") + "）" : "") + "</label>" +
           '<input type="text" class="name-input" value="' + escapeHtml(board.name) + '">' +
-          "<label>語音介紹</label>" +
-          '<div class="audio-row">' +
-            '<span class="audio-name">' + (board.audio ? escapeHtml(board.audio.split("/").pop()) : "尚未上傳") + '</span>' +
-          "</div>" +
-          '<div class="audio-row"><input type="file" accept="audio/*" class="audio-input"></div>' +
+          typeFieldsHtml +
           '<div class="row-actions">' +
             '<button type="button" class="btn save-btn">儲存這個展板</button>' +
           "</div>" +
@@ -153,6 +168,7 @@
   function saveBoard(id, row) {
     var nameInput = row.querySelector(".name-input");
     var audioInput = row.querySelector(".audio-input");
+    var extraInput = row.querySelector(".extra-input");
     var rowStatus = row.querySelector(".row-status");
     var saveBtn = row.querySelector(".save-btn");
 
@@ -163,7 +179,7 @@
     setRowStatus(rowStatus, "儲存中…");
 
     var newName = nameInput.value.trim() || board.name;
-    var file = audioInput.files[0];
+    var file = audioInput ? audioInput.files[0] : null;
 
     var uploadPromise;
     if (file) {
@@ -181,6 +197,9 @@
     uploadPromise
       .then(function () {
         board.name = newName;
+        if (extraInput) {
+          board[extraInput.dataset.field] = extraInput.value.trim();
+        }
         setRowStatus(rowStatus, "更新展板資料中…");
         return persist("更新展板「" + newName + "」");
       })
