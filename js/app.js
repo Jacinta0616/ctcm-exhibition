@@ -97,6 +97,10 @@
       '<div class="detail-image-wrap"><img id="detail-image" src="' + board.image + '" alt="' + escapeHtml(board.name) + '"></div>' +
       '<div class="audio-bar" id="audio-bar"></div>';
 
+    document.getElementById("detail-image").addEventListener("click", function () {
+      window.Lightbox.open(board.image, board.name);
+    });
+
     var audioBar = document.getElementById("audio-bar");
     if (board.audio) {
       audioBar.innerHTML = '<audio controls preload="none" src="' + board.audio + '"></audio>';
