@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>展廳後台管理</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="admin-wrap">
+  <h1>展廳後台管理</h1>
+
+  <div class="token-panel" id="token-panel">
+    <label for="token-input">GitHub Token（第一次使用請貼上，之後這台瀏覽器會記住）</label>
+    <div class="token-row">
+      <input type="password" id="token-input" placeholder="貼上 GitHub Token">
+      <button class="btn" id="token-login-btn">登入</button>
+    </div>
+    <div class="status-line" id="token-status"></div>
+  </div>
+
+  <div id="admin-actions" style="display:none; margin-bottom: 16px;">
+    <button class="btn secondary" id="logout-btn">登出（清除這台瀏覽器的 Token）</button>
+  </div>
+
+  <div id="board-list"></div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/github-api.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
