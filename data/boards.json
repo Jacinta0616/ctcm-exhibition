@@ -26,20 +26,20 @@
       "order": 3
     },
     {
-      "id": "4-3",
-      "name": "資源回收智慧地圖",
-      "image": "assets/images/4-3.jpg",
-      "thumb": "assets/images/thumbs/4-3.jpg",
-      "audio": "assets/audio/4-3.mp3",
-      "order": 5
-    },
-    {
       "id": "4-16",
       "name": "架房坡務分配要領",
       "image": "assets/images/4-16.jpg",
       "thumb": "assets/images/thumbs/4-16.jpg",
       "audio": "",
       "order": 4
+    },
+    {
+      "id": "4-3",
+      "name": "資源回收智慧地圖",
+      "image": "assets/images/4-3.jpg",
+      "thumb": "assets/images/thumbs/4-3.jpg",
+      "audio": "assets/audio/4-3.mp3",
+      "order": 5
     },
     {
       "id": "4-4",
@@ -55,7 +55,7 @@
       "image": "assets/images/4-6.jpg",
       "thumb": "assets/images/thumbs/4-6.jpg",
       "audio": "assets/audio/4-6.mp3",
-      "order": 7
+      "order": 8
     },
     {
       "id": "4-5",
@@ -63,7 +63,7 @@
       "image": "assets/images/4-5.jpg",
       "thumb": "assets/images/thumbs/4-5.jpg",
       "audio": "assets/audio/4-5.mp3",
-      "order": 8
+      "order": 7
     },
     {
       "id": "4-13",
