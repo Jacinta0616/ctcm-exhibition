@@ -39,6 +39,14 @@
       "image": "assets/images/4-4.jpg",
       "thumb": "assets/images/thumbs/4-4.jpg",
       "audio": "assets/audio/4-4.mp3",
+      "order": 6
+    },
+    {
+      "id": "4-16",
+      "name": "架房坡務分配要領",
+      "image": "assets/images/4-16.jpg",
+      "thumb": "assets/images/thumbs/4-16.jpg",
+      "audio": "",
       "order": 5
     },
     {
@@ -48,14 +56,6 @@
       "thumb": "assets/images/thumbs/4-6.jpg",
       "audio": "assets/audio/4-6.mp3",
       "order": 7
-    },
-    {
-      "id": "4-16",
-      "name": "架房坡務分配要領",
-      "image": "assets/images/4-16.jpg",
-      "thumb": "assets/images/thumbs/4-16.jpg",
-      "audio": "",
-      "order": 6
     },
     {
       "id": "4-5",
