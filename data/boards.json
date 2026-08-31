@@ -55,6 +55,14 @@
       "image": "assets/images/4-5.jpg",
       "thumb": "assets/images/thumbs/4-5.jpg",
       "audio": "assets/audio/4-5.mp3",
+      "order": 8
+    },
+    {
+      "id": "4-16",
+      "name": "架房坡務分配要領",
+      "image": "assets/images/4-16.jpg",
+      "thumb": "assets/images/thumbs/4-16.jpg",
+      "audio": "",
       "order": 7
     },
     {
@@ -65,14 +73,6 @@
       "thumb": "assets/images/thumbs/4-13.jpg",
       "url": "https://jacinta0616.github.io/ctcm-game/",
       "order": 9
-    },
-    {
-      "id": "4-16",
-      "name": "架房坡務分配要領",
-      "image": "assets/images/4-16.jpg",
-      "thumb": "assets/images/thumbs/4-16.jpg",
-      "audio": "",
-      "order": 8
     },
     {
       "id": "4-14",
