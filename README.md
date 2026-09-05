@@ -1,4 +1,4 @@
-# 護法博覽會虛擬展廳 — 使用說明
+# 清淨會博覽會虛擬展廳 — 使用說明
 
 給傳乂看的白話版操作手冊。網站本體已經做好，這份文件說明「怎麼把它變成一個大家掃得到的網址」。
 
@@ -59,7 +59,7 @@ window.SITE_CONFIG = {
 後台要能「存檔」，需要一組 GitHub 的通行證（Token）。申請步驟：
 
 1. 登入 GitHub，右上角頭像 → `Settings`
-2. 左側選單最下面找到 `Developer settings`
+2. 左側選單最下面找到 `Developer settings`（找不到的話，直接開這個網址跳過選單：https://github.com/settings/personal-access-tokens/new）
 3. 選 `Personal access tokens` → `Fine-grained tokens` → `Generate new token`
 4. 設定：
    - Token name：隨便取，例如 `ctcm-admin`
@@ -90,6 +90,22 @@ window.SITE_CONFIG = {
 ## 步驟五：QR code
 
 網站上線、確認可以正常打開後，把前台網址（`https://你的帳號.github.io/ctcm-exhibition/`）拿去產生 QR code 即可（Canva、線上 QR code 產生器都可以）。
+
+---
+
+## 常見問題
+
+**Token 忘記存哪裡、找不到了怎麼辦？**
+GitHub 基於安全考量，Token 只會在申請當下顯示一次，之後連 GitHub 自己都查不回來，只能回到「步驟四」重新申請一組新的。舊的那組不用管它，過期或想保險一點可以到申請頁面把它刪掉（Delete / Revoke）。
+
+**後台存檔時出現「Resource not accessible by personal access token」？**
+代表這組 Token 的權限不夠（可能只有讀取、沒有寫入），修正方式：
+1. 回到 GitHub → `Settings` → `Developer settings` → `Personal access tokens` → `Fine-grained tokens`
+2. 找到剛才那組 Token，檢查：
+   - `Repository access` 有沒有勾到 `ctcm-exhibition`
+   - `Permissions` → `Contents` 有沒有設成 `Read and write`（預設是 No access，很容易漏掉）
+3. 如果編輯不了，直接刪掉重建一組，記得這次 Contents 要選 `Read and write`
+4. 到 `admin.html` 按「登出」清掉舊的，貼新 Token 重新登入
 
 ---
 

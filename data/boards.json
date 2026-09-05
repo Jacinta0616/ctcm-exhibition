@@ -1,95 +1,16 @@
 {
-  "title": "護法博覽會虛擬展廳",
+  "title": "清淨會博覽會虛擬展廳",
   "boards": [
-    {
-      "id": "4-12",
-      "name": "主視覺",
-      "image": "assets/images/4-12.jpg",
-      "thumb": "assets/images/thumbs/4-12.jpg",
-      "audio": "assets/audio/4-12.mp3",
-      "order": 1
-    },
-    {
-      "id": "4-1",
-      "name": "架房清潔六大準則",
-      "image": "assets/images/4-1.jpg",
-      "thumb": "assets/images/thumbs/4-1.jpg",
-      "audio": "assets/audio/4-1.mp3",
-      "order": 2
-    },
-    {
-      "id": "4-2",
-      "name": "架房清潔流程、引導要領",
-      "image": "assets/images/4-2.jpg",
-      "thumb": "assets/images/thumbs/4-2.jpg",
-      "audio": "assets/audio/4-2.mp3",
-      "order": 3
-    },
-    {
-      "id": "4-16",
-      "name": "架房坡務分配要領",
-      "image": "assets/images/4-16.jpg",
-      "thumb": "assets/images/thumbs/4-16.jpg",
-      "audio": "assets/audio/4-16.mp3",
-      "order": 4
-    },
-    {
-      "id": "4-3",
-      "name": "資源回收智慧地圖",
-      "image": "assets/images/4-3.jpg",
-      "thumb": "assets/images/thumbs/4-3.jpg",
-      "audio": "assets/audio/4-3.mp3",
-      "order": 5
-    },
-    {
-      "id": "4-4",
-      "name": "回收一物 再生一物",
-      "image": "assets/images/4-4.jpg",
-      "thumb": "assets/images/thumbs/4-4.jpg",
-      "audio": "assets/audio/4-4.mp3",
-      "order": 6
-    },
-    {
-      "id": "4-5",
-      "name": "守護道場從環境開始",
-      "image": "assets/images/4-5.jpg",
-      "thumb": "assets/images/thumbs/4-5.jpg",
-      "audio": "assets/audio/4-5.mp3",
-      "order": 7
-    },
-    {
-      "id": "4-6",
-      "name": "生物防治簡介",
-      "image": "assets/images/4-6.jpg",
-      "thumb": "assets/images/thumbs/4-6.jpg",
-      "audio": "assets/audio/4-6.mp3",
-      "order": 8
-    },
-    {
-      "id": "4-13",
-      "type": "game",
-      "name": "互動小遊戲",
-      "image": "assets/images/4-13.jpg",
-      "thumb": "assets/images/thumbs/4-13.jpg",
-      "url": "https://jacinta0616.github.io/ctcm-game/",
-      "order": 9
-    },
-    {
-      "id": "4-14",
-      "name": "我們的清淨足跡",
-      "image": "assets/images/4-14.jpg",
-      "thumb": "assets/images/thumbs/4-14.jpg",
-      "audio": "",
-      "order": 11
-    },
-    {
-      "id": "4-15",
-      "type": "video",
-      "name": "架房大小洗影片",
-      "image": "assets/images/4-15.jpg",
-      "thumb": "assets/images/thumbs/4-15.jpg",
-      "video": "https://drive.google.com/file/d/1_pe1x8HFyM5vb2uJ7sJMpIJ99mXuRazb/view?usp=drive_link",
-      "order": 10
-    }
+    { "id": "4-12", "name": "展板 4-12", "image": "assets/images/4-12.jpg", "thumb": "assets/images/thumbs/4-12.jpg", "audio": "", "order": 1 },
+    { "id": "4-1", "name": "展板 4-1", "image": "assets/images/4-1.jpg", "thumb": "assets/images/thumbs/4-1.jpg", "audio": "", "order": 2 },
+    { "id": "4-2", "name": "展板 4-2", "image": "assets/images/4-2.jpg", "thumb": "assets/images/thumbs/4-2.jpg", "audio": "", "order": 3 },
+    { "id": "4-3", "name": "展板 4-3", "image": "assets/images/4-3.jpg", "thumb": "assets/images/thumbs/4-3.jpg", "audio": "", "order": 4 },
+    { "id": "4-4", "name": "展板 4-4", "image": "assets/images/4-4.jpg", "thumb": "assets/images/thumbs/4-4.jpg", "audio": "", "order": 5 },
+    { "id": "4-6", "name": "展板 4-6", "image": "assets/images/4-6.jpg", "thumb": "assets/images/thumbs/4-6.jpg", "audio": "", "order": 6 },
+    { "id": "4-5", "name": "展板 4-5", "image": "assets/images/4-5.jpg", "thumb": "assets/images/thumbs/4-5.jpg", "audio": "", "order": 7 },
+    { "id": "4-13", "type": "game", "name": "展板 4-13", "image": "assets/images/4-13.jpg", "thumb": "assets/images/thumbs/4-13.jpg", "url": "https://jacinta0616.github.io/ctcm-game/", "order": 8 },
+    { "id": "4-14", "name": "展板 4-14", "image": "assets/images/4-14.jpg", "thumb": "assets/images/thumbs/4-14.jpg", "audio": "", "order": 9 },
+    { "id": "4-15", "type": "video", "name": "展板 4-15", "image": "assets/images/4-15.jpg", "thumb": "assets/images/thumbs/4-15.jpg", "video": "", "order": 10 },
+    { "id": "4-16", "name": "展板 4-16", "image": "assets/images/4-16.jpg", "thumb": "assets/images/thumbs/4-16.jpg", "audio": "", "order": 11 }
   ]
 }
