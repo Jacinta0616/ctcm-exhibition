@@ -35,10 +35,10 @@
     },
     {
       "id": "4-4",
-      "name": "展板 4-4",
+      "name": "回收一物 再生一物",
       "image": "assets/images/4-4.jpg",
       "thumb": "assets/images/thumbs/4-4.jpg",
-      "audio": "",
+      "audio": "assets/audio/4-4.mp3",
       "order": 5
     },
     {
